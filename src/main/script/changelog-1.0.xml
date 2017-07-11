@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="mukesh" id="1.0">
+		<createTable tableName="person">
+			<column name="id" type="int">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="first_name" type="varchar(20)" />
+			<column name="last_name" type="varchar(50)" />
+			<column name="age" type="int" />
+		</createTable>
+		<addAutoIncrement tableName="person" columnName="id" columnDataType="int" />
+		<rollback>
+			<dropTable tableName="person" />
+		</rollback>
+	</changeSet>
+
+</databaseChangeLog> 
