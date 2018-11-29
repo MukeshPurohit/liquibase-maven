@@ -1,2 +1,2 @@
 # liquibase-maven
-Maven repository for MySQL CI/CD 
+Maven repository for MySQL CI/CD - training
